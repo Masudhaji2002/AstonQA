@@ -3,9 +3,7 @@ public class TaskMethods {
     // который при вызове должен отпечатать в столбец
     // три слова: Orange, Banana, Apple.
     public void printThreeWords() {
-        System.out.println("Orange");
-        System.out.println("Banana");
-        System.out.println("Apple");
+        System.out.println("Orange\nBanana\nApple");
     }
 
     // Создайте метод checkSumSign(), в теле которого объявите две int переменные a и b, и инициализируйте их любыми
@@ -13,12 +11,8 @@ public class TaskMethods {
     // равна 0, то вывести в консоль сообщение “Сумма положительная”, в противном случае - “Сумма отрицательная”;
     public void checkSumSign(int a, int b) {
         int sum = a + b;
-
-        if (sum >= 0) {
-            System.out.println("Сумма положительная");
-        } else {
-            System.out.println("Сумма отрицательная");
-        }
+        String result = (sum >= 0) ? "Сумма положительная" : "Сумма отрицательная";
+        System.out.println(result);
     }
 
     //3. Создайте метод printColor() в теле которого задайте int переменную value и инициализируйте ее любым значением.
@@ -39,11 +33,8 @@ public class TaskMethods {
     // значениями, которыми захотите. Если a больше или равно b, то необходимо вывести в консоль сообщение “a >= b”, в
     // противном случае “a < b”;
     public void compareNumbers(int a, int b) {
-        if (a >= b) {
-            System.out.println("a >= b");
-        } else {
-            System.out.println("a < b");
-        }
+        String result = (a >= b) ? "a >= b" : "a < b";
+        System.out.println(result);
     }
 
     //5. Напишите метод, принимающий на вход два целых числа и проверяющий, что их сумма лежит в пределах от 10 до 20
@@ -56,11 +47,8 @@ public class TaskMethods {
     //6. Напишите метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль,
     // положительное ли число передали или отрицательное. Замечание: ноль считаем положительным числом.
     public void printPositivity(int number) {
-        if (number >= 0) {
-            System.out.println("Число положительное");
-        } else {
-            System.out.println("Число отрицательное");
-        }
+        String positivity = (number >= 0) ? "Число положительное" : "Число отрицательное";
+        System.out.println(positivity);
     }
 
     //7. Напишите метод, которому в качестве параметра передается целое число. Метод должен вернуть true, если число
@@ -133,6 +121,32 @@ public class TaskMethods {
             System.out.print(value + " ");
         }
         System.out.println();
+    }
+
+    //13
+    public static int[][] fillDiagonal(int n) {
+        if (n <= 0) {
+            throw new IllegalArgumentException("Размер массива должен быть больше нуля");
+        }
+        int[][] matrix = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            matrix[i][i] = 1;
+        }
+
+        return matrix;
+    }
+
+    //14
+    public static int[] initializeArray(int len, int initialValue) {
+        if (len < 0) {
+            throw new IllegalArgumentException("Длина массива не может быть отрицательной");
+        }
+
+        int[] array = new int[len];
+        for (int i = 0; i < len; i++) {
+            array[i] = initialValue;
+        }
+        return array;
     }
 
 }
